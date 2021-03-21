@@ -1,0 +1,27 @@
+name: Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Install runner
+        run: |
+          mkdir actions-runner && cd actions-runner
+          curl -O -L https://github.com/actions/runner/releases/download/v2.277.1/actions-runner-osx-x64-2.277.1.tar.gz# Extract the installer
+          tar xzf ./actions-runner-osx-x64-2.277.1.tar.gz
+      - name: Get token
+        run: |
+      - name: Register runner
+      - name: Run workflow using newly registered runner
+      - name: Shutdown runner
